@@ -1,7 +1,7 @@
-wastes = [19, 54, 32, 70 ,32, 90 ,54]
-summ_wastes = sum(wastes)
-average_wastes = summ_wastes // len(wastes)
-max_wastes = max(wastes)
-min_wastes = min(wastes)
-wastes_tuple =(min_wastes, max_wastes, summ_wastes)
-print(wastes_tuple)
+summa = input("Введите сумму: ")
+parts = summa.lower().split()
+if parts[1] != "руб" or parts[3] != "коп":
+    print("Некорректный формат")
+else:
+    result = int(parts[0]) + int(parts[2]) / 100
+    print(f"{result:.2f} руб")
