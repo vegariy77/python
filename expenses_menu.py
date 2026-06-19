@@ -10,9 +10,14 @@ def delete_expenses(expenses, index):
 def get_total(expenses):
         return sum(expenses)          
 def get_average(expenses):
-        return sum(expenses) // len(expenses)
-
-      
+        if not expenses:
+               print("Список пустой")
+        else:
+             return sum(expenses) // len(expenses)
+def print_report(expenses):
+       print(f"Список расходов {expenses}")
+       print(f"""---Сумма расходов: {get_total(expenses)}---
+---Средний расход: {get_average(expenses)} ---""")
 while True:
     print("1. Добавить расход")
     print("2. Удалить раход по индексу" )
@@ -26,10 +31,9 @@ while True:
           case "2":
                 delete_expenses(expenses, index)
           case "3":
-                get_total(expenses)
+                print(get_total(expenses))
           case "4":
-                get_average(expenses)
+                print(get_average(expenses))
           case "5":
-                print(f"Список расходов {expenses}")
-                print(f"""---Сумма расходов: {get_total(expenses)})---
----Средний расход: {get_average(expenses)} ---""")
+                print_report(expenses)
+                
